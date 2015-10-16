@@ -11,7 +11,7 @@ public class PerfectCalculator {
     }
 
     public double multiply(double a, double b) {
-	return a + b;
+	return a * b;
     }
 
     public double [][] multiplyMatrix(double[][] a, double[][] b) {
