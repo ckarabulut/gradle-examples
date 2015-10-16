@@ -1,0 +1,54 @@
+task createSchema {
+	println 'config'
+}
+
+// Declare that world depends on hello
+// Preserves any previously defined dependencies as well
+task loadTestData {
+	println 'ilk satir'
+	dependsOn createSchema
+	println 'ikinci satir'
+}
+
+
+
+
+////// An alternate way to express the same dependency
+//task loadTestData {
+//	dependsOn << createSchema
+//}
+
+////// Do the same using single quotes (which are usually optional)
+//task loadTestData {
+//	dependsOn 'createSchema'
+//}
+////
+////// Explicitly call the method on the task object
+//task loadTestData
+//loadTestData.dependsOn createSchema
+////
+////// A shortcut for declaring dependencies
+////task loadTestData(dependsOn: createSchema)
+////
+////
+////
+////// Declare dependencies one at a time
+//task loadTestData {
+//	dependsOn << compileTestClasses
+//	dependsOn << createSchema
+//}
+////// Pass dependencies as a variable-length list
+//task world {
+//	dependsOn compileTestClasses, createSchema
+//}
+////// Explicitly call the method on the task object
+////task world
+//world.dependsOn compileTestClasses, createSchema
+////// A shortcut for dependencies only
+////// Note the Groovy list syntax
+task world(dependsOn: createSchema) {
+	println 'world'
+}
+world << { println 'execution in world' }
+
+

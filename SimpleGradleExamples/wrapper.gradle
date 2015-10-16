@@ -1,0 +1,6 @@
+// Wrapper example to create a gradlew script.
+// This script can be distributed without need for gradle executable
+// Gradle tasks can be executed via this script.
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.7'
+}

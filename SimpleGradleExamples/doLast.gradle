@@ -1,0 +1,23 @@
+
+task setupDatabaseTests << {
+    println '1. last'
+}
+
+
+setupDatabaseTests {
+    println 'ilk'
+
+    doLast {
+        println '2. last'
+    }
+    println 'ortada ikinci'
+    doLast {
+        println '3. last'
+    }
+    println 'en alt'
+
+    doFirst {
+        println 'first!!'
+    }
+}
+
